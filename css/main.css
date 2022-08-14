@@ -1,0 +1,95 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    background: lightblue;
+}
+
+body > * { /*targets direct children of body element*/
+    background: white;
+}
+
+/* ---- Temporary header ----*/
+header.dummy-class,
+section.dummy-class {
+    padding: 20px 0;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    display: flex;
+    justify-content: center;
+}
+/*------------------*/
+
+section.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.hero-section > * {
+    background: red;
+    width: 85%;
+}
+
+div.hero-inner {
+    display: flex;
+    align-items: center;
+}
+
+div.hero-inner-right-child {
+    position: relative;
+    background: blue;
+    margin: 0 auto;
+}
+
+div.hero-inner-right-child > img {
+    max-height: 580px;
+}
+
+div.hero-inner-right-grandchild {
+    position: absolute;
+    top: 38px;
+    right: 45px;
+}
+
+div.hero-inner-inner {
+   position: relative;
+}
+
+.inner-inner-images {
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 900px) {
+    body > * { /*targets direct children of body element*/
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    section.hero-section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    section.hero-section > *:first-child {
+        width: 48%;
+    }
+
+    section.hero-section > *:last-child {
+        width: auto;
+    }
+}
